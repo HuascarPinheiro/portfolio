@@ -1,11 +1,14 @@
 import styled, { createGlobalStyle } from 'styled-components'
 
+import { Theme } from './themes/dark'
+
 const EstiloGlobal = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
     list-style: none;
+    background-color: ${(props) => (props.theme as Theme).corDeFundo}
   }
 
   body {
@@ -30,12 +33,5 @@ export const Container = styled.div`
   @media (max-width: 768px) {
     max-width: 80%;
     display: block;
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
   }
 `
